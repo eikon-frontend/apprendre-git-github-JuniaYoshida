@@ -1,55 +1,6 @@
 # Introduction à Git
 
-## Git
-
-### Qu'est-ce que Git ?
-
-Sauver son travail et faire des versions est une étape importante pour tous les projets. Mais le faire à la main est fastidieux et source d'erreurs!
-
-**Git** est un logiciel de gestion de versions (VCS en anglais, pour Version Control System). Il est le plus utilisé dans le monde du développement logiciel. Il a été créé par Linus Torvalds, le créateur du noyau Linux. **Git** est un logiciel libre et open source qui permet de suivre les modifications de fichiers dans le temps. Il permet de travailler à plusieurs sur un même projet, de suivre les modifications de chaque personne et de revenir à une version antérieure si besoin.
-
-En plus du suivi des versions, un système VCS comme **Git** offre les fonctions suivantes:
-
-- **Segmentation du travail**
-- **Collaboration à plusieurs sur les mêmes fichiers**
-- **Sauvegarde et historique**
-- **Suivi et report des erreurs / bugs**
-
-### Qu'est-ce que GitHub ?
-
-**GitHub** est un service web d'hébergement et de gestion de développement de logiciels qui se repose sur **Git**. **GitHub** propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets de logiciels libres (Open Source). Le site a été lancé en 2008 par Tom Preston-Werner, Chris Wanstrath, Scott Chacon et PJ Hyett. Microsoft a racheté **GitHub** en 2018 et continue de promouvoir le développement open source.
-
-## Tutoriel 1
-
-Ce tutoriel vous fait apprendre à utiliser les bases de **Git**. Vous allez commencer un projet et le lier avec votre compte **GitHub**.
-
-### Installation
-
-Vous devriez avoir git préinstallé sur votre machine. Si ce n'est pas le cas, vous pouvez le télécharger sur [git-scm.com](https://git-scm.com/downloads).
-Pour installer git, vous pouvez suivre ces [instructions en français](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git).
-
-### Configuration
-
-Après avoir installé git, vous devez configurer votre nom d'utilisateur et votre adresse email. Pour cela, vous pouvez utiliser les commandes suivantes :
-
-```bash
-$ git config --global user.name "Votre Nom"
-$ git config --global user.email "email@example.com"
-```
-
-### Initialisation
-
-Pour installer ce "repo" (repository), vous devez exécuter la commande suivante :
-
-```bash
-$ git clone … # le lien de votre repo
-```
-
-Vous trouverez ce lien sous le bouton "Code" de votre repo sur **GitHub**.
-
-![Bouton Code Github](private/docs/clone.png)
-
-### Faites vos modifications
+## Faites vos modifications
 
 1. Ajoutez un fichier `index.html` à la racine de votre répertoire de travail.
 1. Générez le squelette de votre fichier html avec l'extension **!** de **Emmet**.
@@ -60,68 +11,26 @@ Vous trouverez ce lien sous le bouton "Code" de votre repo sur **GitHub**.
 1. Ajoutez un fichier `style.css` à la racine de votre répertoire de travail.
 1. Ajoutez une règle de style pour le titre de votre page.
 
-### Vérification de l'état
+## Contrôlez vos changements
 
-Pour vérifier l'état de vos fichiers, vous pouvez exécuter la commande suivante :
+En allant dans Github Desktop, vous devriez voir les fichiers que vous avez ajoutés et/ou modifiés. Vous pouvez voir les différences entre les fichiers et les valider.
 
-```bash
-$ git status
-```
+![changements de fichiers](private/docs/desktop-change.png)
 
-Vous constaterez que vos fichiers sont en rouge, ce qui signifie qu'ils ne sont pas encore suivis par **Git**.
+## Créez le commit (sauvegarde)
 
-### Ajout de fichiers
+Entrez un message de commit et cliquez sur "Commit to main".
 
-Pour ajouter des fichiers à votre dépôt git, vous devez exécuter la commande suivante :
+![commit message](private/docs/desktop-commit.png)
 
-```bash
-$ git add nom_du_fichier
-```
+## Publiez vos modifications
 
-En utilisant le caractère `.`, vous pouvez ajouter tous les fichiers modifiés à la fois :
+Cliquez sur "Push origin" pour publier vos modifications sur Github.
 
-```bash
-$ git add .
-```
+![push origin](private/docs/desktop-push.png)
 
-La meilleure pratique est d'ajouter les fichiers un par un pour éviter d'ajouter des fichiers inutiles. On utilise pour cela le flag `--patch`:
+## Consultez votre Pull Request
 
-```bash
-$ git add --patch
-```
+Allez sur votre dépôt Github et cliquez sur "Pull Requests" pour voir votre Pull Request. Des tests vont être lancés pour vérifier que votre code est correct! Refaites le même processus plusieurs fois pour vous entraîner ou corriger vos erreurs!
 
-### Vérification de l'état
-
-Pour vérifier l'état de vos fichiers, vous pouvez exécuter la commande suivante :
-
-```bash
-$ git status
-```
-
-Vous constaterez que vos fichiers sont en vert, ce qui signifie qu'ils sont prêts à être sauvegardés. Avec cette commande, on peut choisir tous les fichiers à sauvegarder ou seulement certains et ainsi
-
-### Commit
-
-Pour **sauvegarder les modifications** de vos fichiers, vous devez exécuter la commande suivante :
-
-```bash
-$ git commit -m "Message de commit"
-```
-
-### Historique
-
-Pour consulter **l'historique de vos commits** (et des miens), vous pouvez exécuter la commande suivante :
-
-```bash
-$ git log
-```
-
-### Envoi sur GitHub
-
-Pour **envoyer vos modifications** sur **GitHub**, vous devez exécuter la commande suivante :
-
-```bash
-$ git push origin main
-```
-
-C'est fini! Vous avez maintenant un projet sur **GitHub**!
+![github pull request](private/docs/github-pr.png)
